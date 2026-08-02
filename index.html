@@ -70,7 +70,13 @@
     display:flex; align-items:center; justify-content:center;
     padding: 60px 20px 60px 70px;
   }
-  @media (max-width: 700px){ .scene{ padding: 50px 20px; } }
+  @media (max-width:700px){
+  .scene{
+    padding:50px 20px;
+    min-height:100svh;
+    width:100%;
+  }
+}
 
   .reveal{
     opacity:0; transform: translateY(30px);
@@ -309,9 +315,14 @@
   }
 
   footer{
-    position: relative; z-index:2;
-    text-align:center; padding: 40px 20px 60px 70px; font-size: 0.8rem; color:#6E8B9A;
-  }
+    position: relative;
+    z-index:2;
+    width:100%;
+    text-align:center;
+    padding:40px 20px 60px;
+    font-size:0.8rem;
+    color:#6E8B9A;
+}
 
   /* ---------- book cover landing ---------- */
   html.book-locked, html.book-locked body{ overflow:hidden; height:100%; }
@@ -383,9 +394,76 @@
   }
 
   #book-cover .below-book{
-    position:absolute; bottom: 8%; left:0; right:0; text-align:center;
-    color: rgba(255,255,255,0.85); font-size:0.85rem;
+  position:absolute; bottom: 8%; left:0; right:0; text-align:center;
+  color: rgba(255,255,255,0.85); font-size:0.85rem;
+}
+
+
+/* ---------- iOS mobile fixes ---------- */
+
+@media (max-width:700px){
+
+  body{
+    width:100%;
+    overflow-x:hidden;
   }
+
+  h1{
+    font-size:clamp(2rem,8vw,3rem);
+  }
+
+  .memory,
+  .memory.reverse{
+    width:100%;
+    flex-direction:column;
+    gap:30px;
+    text-align:center;
+  }
+
+  .text-col{
+    width:100%;
+    min-width:0;
+  }
+
+  .photo-col{
+    width:100%;
+  }
+
+  .photo-frame{
+    width:min(300px,85vw);
+    margin:auto;
+  }
+
+  .song-card{
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .wrapped-shell{
+    width:84vw;
+    max-width:320px;
+  }
+
+  .cal-card{
+    width:86vw;
+    max-width:320px;
+  }
+
+  #book{
+    width:min(300px,80vw);
+  }
+
+  #book-cover .below-book{
+    padding:0 20px;
+    left:0;
+    right:0;
+  }
+
+}
+
+.reveal{
+  width:100%;
+}
 </style>
 </head>
 <body>
